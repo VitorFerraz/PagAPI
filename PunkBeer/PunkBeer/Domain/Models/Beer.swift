@@ -12,12 +12,18 @@ struct Beer: ModelInterface {
     var name: String?
     var image: String?
     var abv: Double?
+    var tagline: String?
+    var ibu: Double?
+    var description: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case image = "image_url"
         case abv
+        case tagline
+        case ibu
+        case description
     }
 }
 

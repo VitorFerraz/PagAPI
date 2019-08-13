@@ -9,6 +9,7 @@
 import Foundation
 protocol HomeViewModelPresentable: ViewModelPresentable {
     var numberOfRows: Int { get }
+    func getDetail() -> Beer?
     func select(index: IndexPath)
     func getDataFor(indexPath: IndexPath) -> PunkBeerCellViewModel
     func fetchData(page: Int?, completion: @escaping ((Result<PaginationResultType, Error>) -> Void))
@@ -21,15 +22,24 @@ final class HomeViewModel: HomeViewModelPresentable {
     var numberOfSections: Int = 1
     private var isLoading: Bool = false
     private var paginableList = GenericList<Beer>()
-    private var beerSelected: PunkBeerCellViewModel?
+    private var selectedBeer: Beer?
 
     var numberOfRows: Int {
         return dataSource.count
     }
     
     func select(index: IndexPath) {
-        beerSelected = dataSource[index.row]
+        if dataSource.indices.contains(index.row) {
+            selectedBeer = dataSource[index.row].model
+        }
     }
+    
+    func getDetail() -> Beer? {
+        return selectedBeer
+
+    }
+    
+    
     
     func getDataFor(indexPath: IndexPath) -> PunkBeerCellViewModel {
         return dataSource[indexPath.row]

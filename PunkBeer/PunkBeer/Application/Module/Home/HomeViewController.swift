@@ -63,23 +63,10 @@ class HomeViewController: AbstractViewController<HomeViewModel> {
         }
     }
     
-//    final fileprivate func pushCheckout() {
-//        showHideLoading(show: true)
-//        viewModel.fetchEGiftDetails { [weak self] (result) in
-//            self?.showHideLoading(show: false)
-//            switch result {
-//            case .success:
-//                self?.performSegue(withIdentifier: "checkoutSegue", sender: nil)
-//            case .error(let error):
-//                self?.onError(error)
-//            }
-//        }
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let vc = segue.destination as? CheckoutViewController {
-//            vc.transaction = viewModel.getTransaction()
-//        }
+        if let vc = segue.destination as? DetailViewController {
+            vc.beer = vm.getDetail()
+        }
     }
 }
 
@@ -104,8 +91,10 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         vm.select(index: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showDetailSegue", sender: nil)
+        
     }
 }
 

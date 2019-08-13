@@ -8,9 +8,11 @@
 
 import Foundation
 struct PunkBeerCellViewModel {
+    let model: Beer
     let name: String, value: String, imageUrl: URL?
     
     init(model: Beer ) {
+        self.model = model
         self.name = model.name ?? ""
         self.value = String(format: "%.2f%%", model.abv ?? 0.0)
         if let image = model.image, let url = URL(string: image) {
