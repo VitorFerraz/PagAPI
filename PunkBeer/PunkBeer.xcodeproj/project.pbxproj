@@ -45,6 +45,8 @@
 		49379B06230254B200C94312 /* GenericListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49379B05230254B200C94312 /* GenericListModel.swift */; };
 		49379B082302563600C94312 /* GenericPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49379B072302563600C94312 /* GenericPageList.swift */; };
 		49379B0A23025D2500C94312 /* TableView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49379B0923025D2500C94312 /* TableView+PullToRefresh.swift */; };
+		49379B0D2302C1BF00C94312 /* StubTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 49379B0C2302C1BE00C94312 /* StubTests.json */; };
+		49379B0F2302C1D600C94312 /* Decodable+fromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49379B0E2302C1D600C94312 /* Decodable+fromJSON.swift */; };
 		93A1A1E849D5671323C27C24 /* Pods_PunkBeerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA16217F701137A2334C62FA /* Pods_PunkBeerTests.framework */; };
 		E0DD476FD9C3EA4079FA8B9F /* Pods_PunkBeer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E633A2B788908A93648F4220 /* Pods_PunkBeer.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +106,8 @@
 		49379B05230254B200C94312 /* GenericListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListModel.swift; sourceTree = "<group>"; };
 		49379B072302563600C94312 /* GenericPageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPageList.swift; sourceTree = "<group>"; };
 		49379B0923025D2500C94312 /* TableView+PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+PullToRefresh.swift"; sourceTree = "<group>"; };
+		49379B0C2302C1BE00C94312 /* StubTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StubTests.json; sourceTree = "<group>"; };
+		49379B0E2302C1D600C94312 /* Decodable+fromJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+fromJSON.swift"; sourceTree = "<group>"; };
 		5EE58D58F9C716F73019C164 /* Pods-PunkBeer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunkBeer.debug.xcconfig"; path = "Target Support Files/Pods-PunkBeer/Pods-PunkBeer.debug.xcconfig"; sourceTree = "<group>"; };
 		BA16217F701137A2334C62FA /* Pods_PunkBeerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PunkBeerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB9C2CD7427D6C37939F3109 /* Pods-PunkBeerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunkBeerTests.release.xcconfig"; path = "Target Support Files/Pods-PunkBeerTests/Pods-PunkBeerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 				49379ACD2302432B00C94312 /* TableView+Loading.swift */,
 				49379B032302512E00C94312 /* Alert+ViewController.swift */,
 				49379B0923025D2500C94312 /* TableView+PullToRefresh.swift */,
+				49379B0E2302C1D600C94312 /* Decodable+fromJSON.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 		49379AE42302463900C94312 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				49379B0B2302C1AF00C94312 /* Mock */,
 				49379AFA2302481F00C94312 /* Builder */,
 				49379AF32302478F00C94312 /* Error */,
 				49379AE82302466600C94312 /* Network */,
@@ -437,6 +443,14 @@
 				49379B0123024C7B00C94312 /* HomeRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		49379B0B2302C1AF00C94312 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				49379B0C2302C1BE00C94312 /* StubTests.json */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		FC445980702F146524C5ABCC /* Frameworks */ = {
@@ -535,6 +549,7 @@
 				49379A9123023C0C00C94312 /* LaunchScreen.storyboard in Resources */,
 				49379A8E23023C0C00C94312 /* Assets.xcassets in Resources */,
 				49379A8C23023C0B00C94312 /* Main.storyboard in Resources */,
+				49379B0D2302C1BF00C94312 /* StubTests.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +649,7 @@
 				49379AE32302462500C94312 /* NetworkPlugin.swift in Sources */,
 				49379AE02302460E00C94312 /* ProviderBuilder.swift in Sources */,
 				49379AFC2302482A00C94312 /* NetworkEngineBuilder.swift in Sources */,
+				49379B0F2302C1D600C94312 /* Decodable+fromJSON.swift in Sources */,
 				49379ADD230245D100C94312 /* DetailService.swift in Sources */,
 				49379ADB230245C500C94312 /* HomeService.swift in Sources */,
 				49379AB523023EFE00C94312 /* DetailViewController.swift in Sources */,

@@ -25,7 +25,7 @@ extension HomeService: Service{
     }
     
     var sampleData: Data {
-        return Data()
+        return [Beer].fromJSON("StubTests")
     }
     
     var task: Task {

@@ -24,6 +24,11 @@ final class HomeViewModel: HomeViewModelPresentable {
     private var paginableList = GenericList<Beer>()
     private var selectedBeer: Beer?
 
+    
+    convenience init(repository: HomeRepository) {
+        self.init()
+        self.repository = repository
+    }
     var numberOfRows: Int {
         return dataSource.count
     }
